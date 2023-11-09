@@ -41,9 +41,12 @@ def get_closest(
     return pool[idx]
 
 
-
 def main():
-    """ simply focuses on eating """
+    """
+    simply focuses on eating;
+    move towards and consume closest edible item,
+    move randomly if there is no edible item in sight
+    """
     self_view, indices, entities, pheromones = from_json()
     names = np.array([entity.get('name', None) for entity in entities])
     edibility = np.array([entity.get('edible', False) for entity in entities])

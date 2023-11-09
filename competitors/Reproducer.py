@@ -9,6 +9,7 @@ import sys
 sys.path.append('...')
 from math_utils import *
 
+
 def veccast(vec):
     return list(map(int, vec))
 
@@ -40,10 +41,8 @@ def get_closest(
     return pool[idx]
 
 
-
-
 def main():
-    """ simply focuses on eating """
+    """ focus on eating, but with some probability to reproduce """
     REPRODUCTION_PROBABILITY = 0.1
     self_view, indices, entities, pheromones = from_json()
     names = np.array([entity.get('name', None) for entity in entities])
